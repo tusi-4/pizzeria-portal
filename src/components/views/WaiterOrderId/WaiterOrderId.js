@@ -1,17 +1,16 @@
 import React from 'react';
 import styles from './WaiterOrderId.module.scss';
-import PropTypes from 'prop-types';
+import {useParams} from 'react-router-dom';
 
-const WaiterOrderId = id => (
-  <div className={styles.component}>
-    <h2>WaiterOrderId view</h2>
-    {/* wyświetl identyfikator widoku - test */}
-    {id}
-  </div>
-);
+const WaiterOrderId = () => {
+  let id = useParams();
 
-WaiterOrderId.propTypes = {
-  id: PropTypes.string,
+  return (
+    <div className={styles.component}>
+      <h2>WaiterOrderId view</h2>
+      <p>ID: {id}</p>
+    </div>
+  );
 };
 
 export default WaiterOrderId;
