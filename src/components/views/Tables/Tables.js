@@ -1,7 +1,6 @@
 import React from 'react';
 import styles from './Tables.module.scss';
 import {Link} from 'react-router-dom';
-import PropTypes from 'prop-types';
 
 const Tables = id => (
   <div className={styles.component}>
@@ -12,9 +11,5 @@ const Tables = id => (
     <Link to={`${process.env.PUBLIC_URL}/tables/events/new`}>Events New</Link>
   </div>
 );
-
-Tables.propTypes = {
-  id: PropTypes.node,
-};
 
 export default Tables;

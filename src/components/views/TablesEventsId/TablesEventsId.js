@@ -3,7 +3,7 @@ import styles from './TablesEventsId.module.scss';
 import {useParams} from 'react-router-dom';
 
 const TablesEventsId = () => {
-  let id = useParams();
+  let {id} = useParams();
   
   return (
     <div className={styles.component}>

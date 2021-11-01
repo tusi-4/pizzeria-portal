@@ -3,7 +3,7 @@ import styles from './WaiterOrderId.module.scss';
 import {useParams} from 'react-router-dom';
 
 const WaiterOrderId = () => {
-  let id = useParams();
+  let {id} = useParams();
 
   return (
     <div className={styles.component}>
