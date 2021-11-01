@@ -7,10 +7,9 @@ import {Paper} from '@mui/material';
 
 const Login = () => (
   <Paper className={styles.component}>
-    {/* zmienić szerokość (flexnięte w scss) */}
-    <TextField className={styles.field} required id="outlined-basic" label="Username" variant="outlined" margin="normal" />
-    <TextField className={styles.field} required id="outlined-basic" label="Password" variant="outlined" margin="normal" />
-    <Button className={styles.field} variant="contained" component={Link} exact to={`${process.env.PUBLIC_URL}/`}>Login</Button>
+    <TextField sx={{mr: '10px'}} required id="outlined-basic" label="Username" variant="outlined" size="small" margin="normal" />
+    <TextField sx={{mr: '10px'}} required id="outlined-basic" label="Password" variant="outlined" size="small" margin="normal" />      
+    <Button sx={{mb: 0}} variant="contained" component={Link} to={`${process.env.PUBLIC_URL}/`}>Login</Button>
   </Paper>
 );
 
