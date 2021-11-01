@@ -2,6 +2,9 @@
 
 .component {
   padding: $base-size;
-  display:flex;
-  flex-direction: column;
+  margin-left: auto;
+}
+
+.link {
+  color: inherit;
 }
