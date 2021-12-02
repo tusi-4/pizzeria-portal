@@ -9,7 +9,7 @@ import TableBody from '@mui/material/TableBody';
 import Checkbox from '@mui/material/Checkbox';
 
 const demoContent = [
-  {id: '123', menu: 'salad with double feta 11$, ice tea with lemon'},
+  {id: '123', menu: 'salad with double feta, ice tea with lemon'},
   {id: '234', menu: 'pizza with thin crust, olives, mushrooms, pizza with thick crust, cheese in edges, salami, pepsi'},
   {id: '345', menu: 'pizza with cream and mushrooms'},
   {id: '456', menu: 'salad, pizza, latte, espresso'},

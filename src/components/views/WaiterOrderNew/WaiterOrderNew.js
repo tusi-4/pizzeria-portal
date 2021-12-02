@@ -9,46 +9,11 @@ import TableBody from '@mui/material/TableBody';
 
 const demoContent = [
   {
-    id: '1',
-    menu: null,
-    options: null,
-    order: null,
-    price: null,
-  },
-  {
-    id: '2',
-    menu: null,
-    options: null,
-    order: null,
-    price: null,
-  },
-  {
-    id: '3',
+    id: '123',
     menu: 'salad, ice tea',
     options: 'double feta, lemon',
     order: 'salad with double feta 11$, ice tea with lemon 3$',
     price: '14$',
-  },
-  {
-    id: '4',
-    menu: 'pizza x 2, pepsi x 2',
-    options: 'thin crust, olives, mushrooms, thick crust, cheese in edges, salami',
-    order: 'pizza with thin crust, olives, mushrooms 26$, pizza with thick crust, cheese in edges, salami 30$, pepsi 5$',
-    price: '66$',
-  },
-  {
-    id: '5',
-    menu: 'pizza',
-    options: 'cream, mushrooms',
-    order: 'pizza with cream and mushrooms 24$',
-    price: '24$',
-  },
-  {
-    id: '6',
-    menu: 'salad, pizza, latte, espresso',
-    options: 'red pepper, green pepper, basil',
-    order: 'salad 9$, pizza 22$, latte 4$, espresso 3$',
-    price: '38$',
   },
 ];
 
@@ -57,7 +22,7 @@ const WaiterOrderNew = () => (
     <Table>
       <TableHead>
         <TableRow>
-          <TableCell>Table</TableCell>
+          <TableCell>Id</TableCell>
           <TableCell>Menu</TableCell>
           <TableCell>Options</TableCell>
           <TableCell>Order</TableCell>
@@ -79,9 +44,7 @@ const WaiterOrderNew = () => (
             <TableCell>
               {row.order}
             </TableCell>
-            <TableCell>
-              {row.price}
-            </TableCell>
+            <TableCell>{row.price}</TableCell>
           </TableRow>
         ))}
       </TableBody>
