@@ -2,11 +2,11 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styles from './Waiter.module.scss';
 import Table from '@mui/material/Table';
-import TableBody from '@mui/material/TableBody';
-import TableCell from '@mui/material/TableCell';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
-import Paper from '@mui/material/Paper';
+import TableCell from '@mui/material/TableCell';
+import TableBody from '@mui/material/TableBody';
+import Paper from  '@mui/material/Paper';
 import Button from '@mui/material/Button';
 import {Link} from 'react-router-dom';
 
@@ -18,6 +18,7 @@ class Waiter extends React.Component {
       error: PropTypes.oneOfType([PropTypes.bool,PropTypes.string]),
     }),
     tables: PropTypes.oneOfType([PropTypes.object,PropTypes.array]),
+    updateStatus: PropTypes.func,
   }
 
   componentDidMount(){
@@ -25,34 +26,45 @@ class Waiter extends React.Component {
     fetchTables();
   }
 
-  renderActions(status){
+  renderActions(status, id){
+    const {updateStatus} = this.props;
     switch (status) {
       case 'free':
         return (
           <>
-            <Button>thinking</Button>
-            <Button>new order</Button>
+            <Button onClick={() => {
+              updateStatus('thinking', id);
+            }}>thinking</Button>
+            <Button component={Link} to={`${process.env.PUBLIC_URL}/waiter/order/new`}>new order</Button>
           </>
         );
       case 'thinking':
         return (
-          <Button>new order</Button>
+          <Button component={Link} to={`${process.env.PUBLIC_URL}/waiter/order/new`}>new order</Button>
         );
       case 'ordered':
         return (
-          <Button>prepared</Button>
+          <Button onClick={() => {
+            updateStatus('prepared', id);
+          }}>prepared</Button>
         );
       case 'prepared':
         return (
-          <Button>delivered</Button>
+          <Button onClick={() => {
+            updateStatus('delivered', id);
+          }}>delivered</Button>
         );
       case 'delivered':
         return (
-          <Button>paid</Button>
+          <Button onClick={() => {
+            updateStatus('paid', id);
+          }}>paid</Button>
         );
       case 'paid':
         return (
-          <Button>free</Button>
+          <Button onClick={() => {
+            updateStatus('free', id);
+          }}>free</Button>
         );
       default:
         return null;
@@ -98,7 +110,7 @@ class Waiter extends React.Component {
                   </TableCell>
                   <TableCell>
                     {row.order && (
-                      <Button component={Link} to={`${process.env.PUBLIC_URL}/waiter/order/${row.order}`}>
+                      <Button to={`${process.env.PUBLIC_URL}/waiter/order/${row.order}`}>
                         {row.order}
                       </Button>
                     )}
