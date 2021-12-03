@@ -1,15 +1,32 @@
 import React from 'react';
 import styles from './TablesEventsId.module.scss';
 import {useParams} from 'react-router-dom';
+import Paper from  '@mui/material/Paper';
+import Card from '@mui/material/Card';
+import CardActions from '@mui/material/CardActions';
+import CardContent from '@mui/material/CardContent';
+import Button from '@mui/material/Button';
+import Typography from '@mui/material/Typography';
 
 const TablesEventsId = () => {
   let {id} = useParams();
   
   return (
-    <div className={styles.component}>
-      <h2>TablesEventsId view</h2>
-      <p>ID: {id}</p>
-    </div>
+    <Paper className={styles.component}>
+      <Card sx={{ maxWidth: 325 }}>
+        <CardContent>
+          <Typography variant="h6" gutterBottom>{id}</Typography>
+          <Typography>Table: </Typography>
+          <Typography>Hour: </Typography>
+          <Typography>Length: </Typography>
+          <Typography>People: </Typography>
+          <Typography>Starters: </Typography>
+        </CardContent>
+        <CardActions>
+          <Button variant="contained">Edit</Button>
+        </CardActions>
+      </Card>
+    </Paper>
   );
 };
 
