@@ -88,17 +88,16 @@ export default function reducer(statePart = [], action = {}) {
         ...statePart,
         loading: {
           active: false,
-          error: action.payload,
+          error: false,
         },
         data: 
-          // sorry Mistrz, nie wiem jak tego użyć :S
           statePart.data.map(table => {
             if(table.id !== action.payload.id){
               return table;
             }
             return {
               ...table,
-              ...action.payload.status,
+              status: action.payload.status,
             };
           }),
       };
