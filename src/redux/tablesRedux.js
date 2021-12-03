@@ -39,10 +39,10 @@ export const fetchFromAPI = () => {
 
 export const updateStatusAPI = (status, id) => {
   return (dispatch, getState) => {
-    dispatch(updateStatus());
+    // dispatch(updateStatus()); - nie musi?
 
     Axios
-      .get(`${api.url}/api/${api.tables}/${id}`)
+      .get(status, `${api.url}/api/${api.tables}/${id}`)
       .then(res => {
         dispatch(updateStatus(res.data));
       })
@@ -90,7 +90,7 @@ export default function reducer(statePart = [], action = {}) {
           active: false,
           error: action.payload,
         },
-        data: action.payload,
+        data: action.payload, // tu coś dodać mądrego
       };
     }
     default:
