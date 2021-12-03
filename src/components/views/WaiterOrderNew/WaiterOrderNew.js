@@ -9,7 +9,7 @@ import Typography from '@mui/material/Typography';
 
 const WaiterOrderNew = () => (
   <Paper className={styles.component}>
-    <Card sx={{ maxWidth: 325 }}>
+    <Card sx={{ maxWidth: '50%' }}>
       <CardContent>
         <Typography>Menu: </Typography>
         <Typography>Options: </Typography>

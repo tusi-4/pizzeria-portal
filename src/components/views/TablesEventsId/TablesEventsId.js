@@ -13,7 +13,7 @@ const TablesEventsId = () => {
   
   return (
     <Paper className={styles.component}>
-      <Card sx={{ maxWidth: 325 }}>
+      <Card sx={{ maxWidth: '50%' }}>
         <CardContent>
           <Typography variant="h6" gutterBottom>{id}</Typography>
           <Typography>Table: </Typography>
